@@ -6,8 +6,105 @@
   <title>My Projects | Ajin George Thomas</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
+  
   <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('your-background-image.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* Navbar Styles */
+    nav {
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    .links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .link a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .link a:hover {
+      color: #ffd700;
+    }
+
+    .hamburg {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .dropdown {
+      display: none;
+      flex-direction: column;
+      background: #444;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      transform: translateY(-500px);
+      transition: transform 0.4s ease;
+      z-index: 999;
+    }
+
+    .dropdown .links a {
+      padding: 10px 20px;
+      color: #fff;
+      border-top: 1px solid #555;
+    }
+
+    .dropdown .cancel {
+      padding: 10px 20px;
+      color: #fff;
+      cursor: pointer;
+      align-self: flex-end;
+    }
+
+    /* Section Styles */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
     /* Project Slider */
     .slider-container {
       width: 100%;
