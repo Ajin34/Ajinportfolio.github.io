@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills | Ajin George Thomas</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <div class="nav-container">
+    <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+      <span>Ajin George Thomas</span> | Portfolio
+    </div>
+    <div class="links">
+      <div class="link" data-aos="fade-up" data-aos-delay="100"><a href="index.html">Home</a></div>
+      <div class="link" data-aos="fade-up" data-aos-delay="200"><a href="about.html">About</a></div>
+      <div class="link" data-aos="fade-up" data-aos-delay="300"><a href="skills.html">Skills</a></div>
+      <div class="link" data-aos="fade-up" data-aos-delay="400"><a href="#projects">Projects</a></div>
+      <div class="link contact-btn" data-aos="fade-up" data-aos-delay="500"><a href="#contact">Contact</a></div>
+    </div>
+    <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+  </div>
+
+  <div class="dropdown">
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+    </div>
+  </div>
+</nav>
+
+<!-- Skills Section -->
+<section id="skills">
+  <div class="skills-container" id="skillsContainer">
+    <!-- Skill boxes will be inserted dynamically -->
+  </div>
+</section>
+
+<script>
+  const skills = [
+    { icon: 'bxs-lock-alt', title: 'Cybersecurity', description: 'Proficient in network security, vulnerability assessments, and penetration testing.' },
+    { icon: 'bxl-python', title: 'Python Programming', description: 'Experienced in scripting for automation, data analysis, and security tools.' },
+    { icon: 'bxs-server', title: 'Linux', description: 'Expert in Linux administration, shell scripting, and using Linux for penetration testing.' },
+    { icon: 'bxl-docker', title: 'Docker', description: 'Familiar with containerization and using Docker for environment management.' },
+    { icon: 'bx-shield', title: 'Wazuh SIEM', description: 'Experienced in using Wazuh for Security Information and Event Management (SIEM).' },
+    { icon: 'bx-shield-alt', title: 'Splunk SIEM', description: 'Expertise in Splunk for security data analysis, alerting, and monitoring.' },
+    { icon: 'bx-archive', title: 'Log Analysis', description: 'Skilled in analyzing logs for security incidents and monitoring system health.' },
+    { icon: 'bx-network-chart', title: 'Network Monitoring', description: 'Knowledgeable in monitoring and securing networks using advanced tools.' },
+    { icon: 'bxl-burp', title: 'Burp Suite', description: 'Experienced in using Burp Suite for web application security testing and vulnerability scanning.' },
+    { icon: 'bx-bug', title: 'VAPT', description: 'Skilled in Vulnerability Assessment and Penetration Testing on web apps and systems.' },
+    { icon: 'bxl-html5', title: 'Web Development', description: 'Proficient in HTML, CSS, JS, and creating responsive, interactive websites.' },
+    { icon: 'bx-shield-quarter', title: 'WAZUH', description: 'Familiar with real-time threat detection and compliance monitoring using Wazuh.' },
+    { icon: 'bx-lock-open', title: 'Intrusion Detection/Prevention', description: 'Understanding of IDS/IPS systems and anomaly-based detection mechanisms.' }
+  ];
+
+  function renderSkills() {
+    const container = document.getElementById('skillsContainer');
+    container.innerHTML = '';
+
+    skills.forEach((skill, index) => {
+      const skillBox = document.createElement('div');
+      skillBox.classList.add('skill-box');
+      skillBox.style.animationDelay = `${0.3 + index * 0.2}s`;
+
+      skillBox.innerHTML = `
+        <div class="skill-icon">
+          <i class='bx ${skill.icon}'></i>
+        </div>
+        <div class="skill-title">${skill.title}</div>
+        <div class="skill-description">${skill.description}</div>
+      `;
+
+      container.appendChild(skillBox);
+    });
+  }
+
+  function hamburg() {
+    document.querySelector(".dropdown").style.transform = "translateY(0)";
+  }
+
+  function cancel() {
+    document.querySelector(".dropdown").style.transform = "translateY(-500px)";
+  }
+
+  document.addEventListener('DOMContentLoaded', renderSkills);
+</script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({ offset: 0 });
+</script>
+
+</body>
+</html>
