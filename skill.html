@@ -1,238 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills | Ajin</title>
-
-    <link rel="icon" type="image/png" href="sailogo.png">
-    <link rel="stylesheet" href="style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-
-    <style>
-        /* Basic Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0a0a0a;
-            color: #fff;
-            overflow-x: hidden;
-        }
-
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(51, 51, 51, 0.9);
-            padding: 15px 20px;
-            z-index: 1000;
-            backdrop-filter: blur(5px);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .navbar {
-            display: flex;
-            gap: 15px;
-        }
-
-        .navbar a {
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 15px;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-
-        .navbar a:hover {
-            background-color: #575757;
-            border-radius: 5px;
-        }
-
-        .menu-icon {
-            display: none;
-            font-size: 28px;
-            color: white;
-            cursor: pointer;
-        }
-
-        @media screen and (max-width: 768px) {
-            .navbar {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                right: 0;
-                background-color: rgba(51, 51, 51, 0.95);
-                width: 100%;
-                text-align: center;
-            }
-
-            .navbar a {
-                display: block;
-                padding: 10px;
-            }
-
-            .menu-icon {
-                display: block;
-            }
-
-            .navbar.active {
-                display: flex;
-            }
-        }
-
-        section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 100px 20px 60px;
-            min-height: 100vh;
-        }
-
-        .skills-wrapper {
-            width: 100%;
-            max-width: 1200px; /* Centering the container */
-            text-align: center;
-            padding: 20px;
-        }
-
-        .skills-heading {
-            font-size: 36px;
-            margin-bottom: 40px;
-            color: #1edb09;
-            font-weight: bold;
-        }
-
-        .skills-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            justify-items: center;
-        }
-
-        .skill-box {
-            background-color: #1a1a1a;
-            padding: 30px 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: fadeInBox 0.8s ease forwards;
-            opacity: 0;
-            transform: translateY(20px);
-            max-width: 350px;
-            width: 100%;
-        }
-
-        .skill-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 6px 25px rgba(30, 219, 9, 0.4);
-        }
-
-        @keyframes fadeInBox {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .skill-icon {
-            font-size: 48px;
-            color: #1edb09;
-            margin-bottom: 15px;
-        }
-
-        .skill-title {
-            font-size: 22px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .skill-description {
-            color: #ccc;
-            font-size: 15px;
-            line-height: 1.4;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills | Ajin George Thomas</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
 </head>
 <body>
 
-<header class="header">
-    <a href="index.html" class="logo">Portfolio | Ajin</a>
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
-    <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="skill.html" class="active">Skills</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
-
-<section id="skills">
-    <div class="skills-wrapper">
-        <h2 class="skills-heading">My Skills</h2>
-        <div class="skills-container" id="skillsContainer">
-            <!-- Skill boxes will be inserted dynamically -->
-        </div>
+<!-- Navbar -->
+<nav>
+  <div class="nav-container">
+    <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+      <span>Ajin George Thomas</span> | Portfolio
     </div>
+    <div class="links">
+      <div class="link" data-aos="fade-up" data-aos-delay="100"><a href="index.html">Home</a></div>
+      <div class="link" data-aos="fade-up" data-aos-delay="200"><a href="about.html">About</a></div>
+      <div class="link" data-aos="fade-up" data-aos-delay="300"><a href="skills.html">Skills</a></div>
+      <div class="link" data-aos="fade-up" data-aos-delay="400"><a href="#projects">Projects</a></div>
+      <div class="link contact-btn" data-aos="fade-up" data-aos-delay="500"><a href="#contact">Contact</a></div>
+    </div>
+    <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+  </div>
+
+  <div class="dropdown">
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+    </div>
+  </div>
+</nav>
+
+<!-- Skills Section -->
+<section id="skills">
+  <div class="skills-container" id="skillsContainer">
+    <!-- Skill boxes will be inserted dynamically -->
+  </div>
 </section>
 
 <script>
-    const skills = [
-        { icon: 'bxs-lock-alt', title: 'Cybersecurity', description: 'Proficient in network security, vulnerability assessments, and penetration testing.' },
-        { icon: 'bxl-python', title: 'Python Programming', description: 'Experienced in scripting for automation, data analysis, and security tools.' },
-        { icon: 'bxs-server', title: 'Linux', description: 'Expert in Linux administration, shell scripting, and using Linux for penetration testing.' },
-        { icon: 'bxl-docker', title: 'Docker', description: 'Familiar with containerization and using Docker for environment management.' },
-        { icon: 'bx-shield', title: 'Wazuh SIEM', description: 'Experienced in using Wazuh for Security Information and Event Management (SIEM).' },
-        { icon: 'bx-shield-alt', title: 'Splunk SIEM', description: 'Expertise in Splunk for security data analysis, alerting, and monitoring.' },
-        { icon: 'bx-archive', title: 'Log Analysis', description: 'Skilled in analyzing logs for security incidents and monitoring system health.' },
-        { icon: 'bx-network-chart', title: 'Network Monitoring', description: 'Knowledgeable in monitoring and securing networks using advanced tools.' },
-        { icon: 'bxl-burp', title: 'Burp Suite', description: 'Experienced in using Burp Suite for web application security testing and vulnerability scanning.' }
-    ];
+  const skills = [
+    { icon: 'bxs-lock-alt', title: 'Cybersecurity', description: 'Proficient in network security, vulnerability assessments, and penetration testing.' },
+    { icon: 'bxl-python', title: 'Python Programming', description: 'Experienced in scripting for automation, data analysis, and security tools.' },
+    { icon: 'bxs-server', title: 'Linux', description: 'Expert in Linux administration, shell scripting, and using Linux for penetration testing.' },
+    { icon: 'bxl-docker', title: 'Docker', description: 'Familiar with containerization and using Docker for environment management.' },
+    { icon: 'bx-shield', title: 'Wazuh SIEM', description: 'Experienced in using Wazuh for Security Information and Event Management (SIEM).' },
+    { icon: 'bx-shield-alt', title: 'Splunk SIEM', description: 'Expertise in Splunk for security data analysis, alerting, and monitoring.' },
+    { icon: 'bx-archive', title: 'Log Analysis', description: 'Skilled in analyzing logs for security incidents and monitoring system health.' },
+    { icon: 'bx-network-chart', title: 'Network Monitoring', description: 'Knowledgeable in monitoring and securing networks using advanced tools.' },
+    { icon: 'bxl-burp', title: 'Burp Suite', description: 'Experienced in using Burp Suite for web application security testing and vulnerability scanning.' },
+    { icon: 'bx-bug', title: 'VAPT', description: 'Skilled in Vulnerability Assessment and Penetration Testing on web apps and systems.' },
+    { icon: 'bxl-html5', title: 'Web Development', description: 'Proficient in HTML, CSS, JS, and creating responsive, interactive websites.' },
+    { icon: 'bx-shield-quarter', title: 'WAZUH', description: 'Familiar with real-time threat detection and compliance monitoring using Wazuh.' },
+    { icon: 'bx-lock-open', title: 'Intrusion Detection/Prevention', description: 'Understanding of IDS/IPS systems and anomaly-based detection mechanisms.' }
+  ];
 
-    function renderSkills() {
-        const container = document.getElementById('skillsContainer');
-        container.innerHTML = '';
+  function renderSkills() {
+    const container = document.getElementById('skillsContainer');
+    container.innerHTML = '';
 
-        skills.forEach((skill, index) => {
-            const skillBox = document.createElement('div');
-            skillBox.classList.add('skill-box');
-            skillBox.style.animationDelay = `${0.2 + index * 0.1}s`;
+    skills.forEach((skill, index) => {
+      const skillBox = document.createElement('div');
+      skillBox.classList.add('skill-box');
+      skillBox.style.animationDelay = `${0.3 + index * 0.2}s`;
 
-            skillBox.innerHTML = `
-                <div class="skill-icon">
-                    <i class='bx ${skill.icon}'></i>
-                </div>
-                <div class="skill-title">${skill.title}</div>
-                <div class="skill-description">${skill.description}</div>
-            `;
+      skillBox.innerHTML = `
+        <div class="skill-icon">
+          <i class='bx ${skill.icon}'></i>
+        </div>
+        <div class="skill-title">${skill.title}</div>
+        <div class="skill-description">${skill.description}</div>
+      `;
 
-            container.appendChild(skillBox);
-        });
-    }
+      container.appendChild(skillBox);
+    });
+  }
 
-    function toggleMenu() {
-        const navbar = document.querySelector('.navbar');
-        navbar.classList.toggle('active');
-    }
+  function hamburg() {
+    document.querySelector(".dropdown").style.transform = "translateY(0)";
+  }
 
-    document.addEventListener('DOMContentLoaded', renderSkills);
+  function cancel() {
+    document.querySelector(".dropdown").style.transform = "translateY(-500px)";
+  }
+
+  document.addEventListener('DOMContentLoaded', renderSkills);
+</script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({ offset: 0 });
 </script>
 
 </body>
