@@ -153,7 +153,7 @@ nav {
 .certifications-container {
     max-width: 1200px;
     margin: 0 auto;
-    background: #112240;
+    background: linear-gradient(to right, rgb(255,255,255), rgb(173, 232, 254));
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(100, 255, 218, 0.3);
