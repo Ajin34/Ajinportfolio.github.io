@@ -8,69 +8,230 @@
   <meta property="og:description" content="Explore my portfolio showcasing my projects, skills, and experiences in cybersecurity and web development.">
   <meta property="og:image" content="path/to/your-image.jpg">
   <title>Contact | Ajin George Thomas</title>
-  <link rel="icon" href="path/to/favicon.ico" type="image/x-icon" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="sailogo.png" />
+
+  <!-- External CSS -->
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #0a0a0a;
+      color: #fff;
+      overflow-x: hidden;
+      padding-top: 70px;
+    }
+
+    .header {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 15px 20px;
+      z-index: 1000;
+      backdrop-filter: blur(5px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #00ffcc;
+      text-decoration: none;
+    }
+
+    .navbar {
+      display: flex;
+      gap: 15px;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .navbar a:hover {
+      background-color: #575757;
+      border-radius: 5px;
+      transform: scale(1.1);
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 768px) {
+      .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.9);
+        width: 100%;
+        text-align: center;
+      }
+
+      .navbar a {
+        display: block;
+        padding: 12px;
+      }
+
+      .navbar.active {
+        display: flex;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+
+      .menu-icon {
+        display: block;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .contact-container {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .contact-container h2 {
+      font-size: 2.2rem;
+      color: #00ffcc;
+      margin-bottom: 30px;
+    }
+
+    .contact-item {
+      background: linear-gradient(135deg, #1a1a1a, #222);
+      padding: 10px;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 400px;
+      margin: 12px auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.2);
+    }
+
+    .contact-item:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #222, #333);
+      box-shadow: 0px 0px 20px rgba(30, 219, 9, 0.8);
+    }
+
+    .contact-item a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .contact-item i {
+      font-size: 22px;
+      margin-right: 10px;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .contact-item:hover i {
+      transform: rotate(360deg);
+      color: #1edb09;
+    }
+
+    .new-content-box {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 25px;
+      width: 90%;
+      max-width: 600px;
+      margin: 40px auto 0;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+      text-align: left;
+    }
+
+    .new-content-box h3 {
+      color: #00ffcc;
+      margin-bottom: 10px;
+    }
+
+    .new-content-box p {
+      color: #eaeaea;
+      line-height: 1.6;
+    }
+  </style>
 </head>
 <body>
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">Portfolio | Ajin</a>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <nav class="navbar" id="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skill.html">Skills</a>
+      <a href="project.html">Projects</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
 
-  <!-- Navbar -->
-  <nav>
-    <div class="nav-container">
-      <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
-        <span>Ajin George Thomas</span> | Portfolio
-      </div>
-      <div class="links">
-        <div class="link"><a href="index.html">Home</a></div>
-        <div class="link"><a href="about.html">About</a></div>
-        <div class="link"><a href="skill.html">Skills</a></div>
-        <div class="link"><a href="project.html">Projects</a></div>
-        <div class="link contact-btn"><a href="contact.html">Contact</a></div>
-      </div>
-      <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
-    </div>
+  <!-- Contact Content -->
+  <div class="contact-container" data-aos="fade-up">
+    <h2>Contact Me</h2>
 
-    <!-- Mobile Dropdown -->
-    <div class="dropdown">
-      <div class="links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="skill.html">Skills</a>
-        <a href="project.html">Projects</a>
-        <a href="contact.html">Contact</a>
-        <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Contact Section -->
-  <section class="contact-section">
-    <h1 data-aos="fade-up" data-aos-delay="200">Contact Me >>> &ensp;&ensp;&ensp;</h1>
-    <div class="contact-buttons" data-aos="fade-up" data-aos-delay="300">
-      <a href="https://www.linkedin.com/in/ajin-george-thomas-129143220/" target="_blank" class="contact-btn linkedin" aria-label="Visit my LinkedIn profile">
-        <i class="fab fa-linkedin"></i> LinkedIn
-      </a>
-      <a href="https://wa.me/918606683843" target="_blank" class="contact-btn whatsapp" aria-label="Message me on WhatsApp">
-        <i class="fab fa-whatsapp"></i> WhatsApp
-      </a>
-      <a href="https://github.com/Ajin34" target="_blank" class="contact-btn github" aria-label="Visit my GitHub profile">
-        <i class="fab fa-github"></i> GitHub
+    <div class="contact-item" data-aos="fade-up" data-aos-delay="100">
+      <a href="https://www.linkedin.com/in/ajin-george-thomas-129143220/" target="_blank">
+        <i class='bx bxl-linkedin'></i> LinkedIn
       </a>
     </div>
-  </section>
 
-  <!-- AOS Init -->
+    <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
+      <a href="https://github.com/Ajin34" target="_blank">
+        <i class='bx bxl-github'></i> GitHub
+      </a>
+    </div>
+
+    <div class="contact-item" data-aos="fade-up" data-aos-delay="300">
+      <a href="https://wa.me/918606683843" target="_blank">
+        <i class='bx bxl-whatsapp'></i> WhatsApp
+      </a>
+    </div>
+
+    <div class="new-content-box" data-aos="zoom-in" data-aos-delay="400">
+      <h3>Looking for Job Opportunities</h3>
+      <p>I am currently seeking roles in web development, cybersecurity, or related fields. If you're hiring or know of any opportunities, feel free to reach out. I'm passionate about learning and taking on new challenges!</p>
+    </div>
+  </div>
+
+  <!-- AOS Animation -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
-    AOS.init({ offset: 0 });
+    AOS.init({ offset: 0, duration: 1000 });
   </script>
+
+  <!-- Toggle Menu -->
   <script>
-    function hamburg() {
-      document.querySelector(".dropdown").style.transform = "translateY(0)";
-    }
-    function cancel() {
-      document.querySelector(".dropdown").style.transform = "translateY(-500px)";
+    function toggleMenu() {
+      document.getElementById("navbar").classList.toggle("active");
     }
   </script>
 </body>
