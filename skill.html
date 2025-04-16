@@ -9,20 +9,65 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"/>
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
   <style>
-    /* Assuming the index page background is #f0f0f0 */
+    /* Apply consistent gradient background */
     body {
-      background-color: linear-gradient(to right, rgb(255,255,255), rgb(173, 232, 254)); /* Index page background color */
+      background: linear-gradient(to right, rgb(255,255,255), rgb(173, 232, 254));
     }
-    
+
     #skills {
-      background-color:  linear-gradient(to right, rgb(255,255,255), rgb(173, 232, 254)); /* Darker version of the index page background */
+      background: linear-gradient(to right, rgb(255,255,255), rgb(173, 232, 254));
     }
 
     .skills-container {
       padding: 50px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
     }
 
-    /* Add your other styles for .skills-container or skill-box if needed */
+    .skill-box {
+      background: #ffffff;
+      padding: 20px;
+      width: 250px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease;
+      animation: fadeInUp 0.6s ease both;
+    }
+
+    .skill-box:hover {
+      transform: translateY(-10px);
+    }
+
+    .skill-icon i {
+      font-size: 40px;
+      color: #00bcd4;
+      margin-bottom: 10px;
+    }
+
+    .skill-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .skill-description {
+      font-size: 14px;
+      color: #333;
+    }
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
