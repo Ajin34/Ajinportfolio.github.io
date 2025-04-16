@@ -34,13 +34,13 @@ nav {
 }
 
 .logo {
-    color: white; /* Changed color to white */
+    color: #1a1a1a;
     font-size: 2rem;
     font-weight: bolder;
 }
 
 .logo span {
-    color: white; /* Changed color to white */
+    color: #0077b6;
     text-shadow: 0 0 10px #0077b6;
 }
 
