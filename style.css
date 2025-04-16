@@ -146,7 +146,7 @@ nav {
     width: 100%;
     padding: 80px 20px;
     overflow-y: auto;
-    background: #0a192f;
+    background:linear-gradient(to right, rgb(255,255,255), rgb(173, 232, 254));
     min-height: 100vh;
 }
 
