@@ -1,135 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajin George Thomas | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ajin George Thomas Portfolio, showcasing skills and projects in cybersecurity, web development, and more.">
+  <meta property="og:title" content="Ajin George Thomas - Portfolio">
+  <meta property="og:description" content="Explore my portfolio showcasing my projects, skills, and experiences in cybersecurity and web development.">
+  <meta property="og:image" content="path/to/your-image.jpg">
+  <title>Contact | Ajin George Thomas</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="sailogo.png" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
-
 <body>
-
-    <!-- Navbar -->
     <nav>
-        <div class="nav-container">
-            <div class="logo">
-                <span>Ajin George Thomas</span>
-            </div>
-            <div class="hamburg" id="hamburg">
-                &#9776;
-            </div>
-            <div class="cancel" id="cancel">
-                &times;
-            </div>
-            <div class="links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact" class="contact-btn">Contact</a>
-            </div>
-        </div>
+    <div class="nav-container">
+      <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+        <span>Ajin George Thomas</span>| Portfolio
+      </div>
+      <div class="links">
+        <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.html">Home</a></div>
+        <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="about.html">About</a></div>
+        <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="skill.html">Skills</a></div>
+        <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="project.html">Projects</a></div>
+        <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="contact.html">Contact Us</a></div>
+      </div>
+      <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+    </div>
+    <div class="dropdown">
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skill.html">Skills</a>
+        <a href="project.html">Projects</a>
+        <a href="contact.html">Contact Us</a>
+        <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+      </div>
+    </div>
+  </nav>
+  <!-- Header -->
+  <header class="header">
+    <a href="index.html" class="logo">Ajin George Thomas</a>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+    <nav class="navbar" id="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skill.html">Skills</a>
+      <a href="project.html">Projects</a>
+      <a href="contact.html" class="active">Contact</a>
     </nav>
+  </header>
 
-    <!-- Main Content -->
-    <section id="home" class="home-section">
-        <div class="home-container">
-            <h1>Welcome to My Portfolio</h1>
-            <p>Explore my skills, projects, and experiences.</p>
-        </div>
-    </section>
+  <!-- Contact Content -->
+  <div class="contact-container" data-aos="fade-up">
+    <h2>Contact Me</h2>
 
-    <section id="about" class="about-section">
-        <div class="about-container">
-            <h1>About Me</h1>
-            <p>Hi, I'm Ajin George Thomas, a passionate web developer and cybersecurity enthusiast.</p>
-        </div>
-    </section>
+    <div class="contact-item" data-aos="fade-up" data-aos-delay="100">
+      <a href="https://www.linkedin.com/in/ajin-george-thomas-129143220/" target="_blank">
+        <i class='bx bxl-linkedin'></i> LinkedIn
+      </a>
+    </div>
 
-    <section id="skills" class="skills-section">
-        <div class="skills-container">
-            <h1>Skills</h1>
-            <ul>
-                <li>Web Development</li>
-                <li>Cybersecurity</li>
-                <li>Python</li>
-                <li>MySQL</li>
-                <li>Django</li>
-            </ul>
-        </div>
-    </section>
+    <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
+      <a href="https://github.com/Ajin34" target="_blank">
+        <i class='bx bxl-github'></i> GitHub
+      </a>
+    </div>
 
-    <section id="projects" class="projects-section">
-        <div class="projects-container">
-            <h1>Projects</h1>
-            <div class="project-item">
-                <h3>Project 1</h3>
-                <p>Description of project 1...</p>
-            </div>
-            <div class="project-item">
-                <h3>Project 2</h3>
-                <p>Description of project 2...</p>
-            </div>
-        </div>
-    </section>
+    <div class="contact-item" data-aos="fade-up" data-aos-delay="300">
+      <a href="https://wa.me/918606683843" target="_blank">
+        <i class='bx bxl-whatsapp'></i> WhatsApp
+      </a>
+    </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="contact-container">
-            <h1>Contact Me</h1>
-            <div class="contact-form">
-                <form action="#" method="POST">
-                    <div>
-                        <input type="text" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div>
-                        <input type="text" name="subject" placeholder="Subject" required>
-                    </div>
-                    <div>
-                        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                    </div>
-                    <div>
-                        <button type="submit">Send Message</button>
-                    </div>
-                </form>
-            </div>
+    <div class="new-content-box" data-aos="zoom-in" data-aos-delay="400">
+      <h3>Looking for Job Opportunities</h3>
+      <p>I am currently seeking roles in web development, cybersecurity, or related fields. If you're hiring or know of any opportunities, feel free to reach out. I'm passionate about learning and taking on new challenges!</p>
+    </div>
+  </div>
 
-            <!-- Social Media Links -->
-            <div class="social-links">
-                <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-                <a href="https://github.com" target="_blank">GitHub</a>
-                <a href="https://wa.me" target="_blank">WhatsApp</a>
-            </div>
+  <!-- AOS Animation -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ offset: 0, duration: 1000 });
+  </script>
 
-            <p class="job-opportunities">Looking for Job Opportunities</p>
-            <p>I am currently seeking roles in web development, cybersecurity, or related fields. If you're hiring or know of any opportunities, feel free to reach out. I'm passionate about learning and taking on new challenges!</p>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Ajin George Thomas. All rights reserved.</p>
-    </footer>
-
-    <!-- JavaScript for mobile navbar toggle -->
-    <script>
-        const hamburger = document.getElementById('hamburg');
-        const cancel = document.getElementById('cancel');
-        const dropdown = document.querySelector('.links');
-
-        hamburger.addEventListener('click', () => {
-            dropdown.classList.add('active');
-        });
-
-        cancel.addEventListener('click', () => {
-            dropdown.classList.remove('active');
-        });
-    </script>
+  <!-- Toggle Menu -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("navbar").classList.toggle("active");
+    }
+  </script>
 </body>
-
 </html>
