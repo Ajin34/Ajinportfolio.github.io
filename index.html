@@ -3,102 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ajin George Thomas Portfolio</title>
+  <title>Ajin George Thomas | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
-  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 <body>
+  <!-- Navbar -->
   <nav>
     <div class="nav-container">
       <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
-        <span>Ajin George Thomas</span>| Portfolio
+        <span>Ajin George Thomas</span> | Portfolio
       </div>
       <div class="links">
-        <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="#">Home</a></div>
-        <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="about.html">About</a></div>
-        <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="#">Skills</a></div>
-        <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="#">Projects</a></div>
-        <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="#">Contact Us</a></div>
+        <div class="link" data-aos="fade-up" data-aos-delay="100"><a href="#">Home</a></div>
+        <div class="link" data-aos="fade-up" data-aos-delay="200"><a href="about.html">About</a></div>
+        <div class="link" data-aos="fade-up" data-aos-delay="300"><a href="#skills">Skills</a></div>
+        <div class="link" data-aos="fade-up" data-aos-delay="400"><a href="#projects">Projects</a></div>
+        <div class="link contact-btn" data-aos="fade-up" data-aos-delay="500"><a href="#contact">Contact</a></div>
       </div>
       <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
     </div>
+
+    <!-- Dropdown (mobile menu) -->
     <div class="dropdown">
       <div class="links">
-        <a href="index.html">Home</a>
+        <a href="#">Home</a>
         <a href="about.html">About</a>
-        <a href="#">Skills</a>
-        <a href="#">Projects</a>
-        <a href="#">Contact Us</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
         <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
       </div>
     </div>
   </nav>
 
-  <section>
+  <!-- Home Section -->
+  <section class="home" id="home">
     <div class="main-container">
       <div class="image" data-aos="zoom-in-right" data-aos-duration="2500">
         <img src="main.png" alt="Ajin George Thomas" />
       </div>
       <div class="content">
-        <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">
-          Hey I'm <span>Ajin George Thomas</span>
+        <h1 data-aos="fade-left" data-aos-delay="800">
+          Hey, I'm <span>Ajin George Thomas</span>
         </h1>
-        <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="900">
+        <div class="typewriter" data-aos="fade-right" data-aos-delay="900">
           I'm a <span id="typing"></span>
         </div>
-        <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">
-          This portfolio highlights my passion for cybersecurity, my expertise in monitoring and defending against security incidents, and my skills in ethical hacking.
-          <br><br>
-            I have practical experience in identifying threats, conducting security assessments, and responding to incidents that target networks, applications, and systems.
-          <br><br>
-            I’m constantly learning and improving my skills in SOC, penetration testing, and developing security solutions to mitigate risks and vulnerabilities.
+        <p data-aos="flip-up" data-aos-delay="1000">
+          Passionate about cybersecurity and ethical hacking. Skilled in monitoring and defending against security incidents, conducting assessments, and crafting solutions to secure networks and systems.
         </p>
-        <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1200">
-          <a href="https://github.com/Ajin34"><i class="fa-brands fa-github"></i></a>
-          <a href="https://www.linkedin.com/in/ajin-george-thomas-129143220/"><i class="fa-brands fa-linkedin"></i></a>
+        <div class="social-links" data-aos="flip-down" data-aos-delay="1200">
+          <a href="https://github.com/Ajin34" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/ajin-george-thomas-129143220/" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
-        <div class="btn" data-aos="zoom-out-left" data-aos-duration="1000" data-aos-delay="1300">
-          <a href="AJIN_RESUME.pdf" download>
-            <button>Download CV</button>
-          </a>
+        <div class="btn" data-aos="zoom-out-left" data-aos-delay="1300">
+          <a href="AJIN_RESUME.pdf" download><button>Download CV</button></a>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Include AOS & Typed.js -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init({ offset: 0 });
   </script>
-
   <script>
-    var typed = new Typed("#typing", {
-      strings: [
-        "Bug Hunter",
-        "Web Developer",
-        "Ethical Hacker",
-        "SOC Analyst",
-        "Incident Responder"
-      ],
+    new Typed("#typing", {
+      strings: ["Bug Hunter", "Web Developer", "Ethical Hacker", "SOC Analyst", "Incident Responder"],
       typeSpeed: 80,
       backSpeed: 50,
       loop: true
     });
   </script>
-
   <script>
     function hamburg() {
-      const navbar = document.querySelector(".dropdown");
-      navbar.style.transform = "translateY(0px)";
+      document.querySelector(".dropdown").style.transform = "translateY(0)";
     }
     function cancel() {
-      const navbar = document.querySelector(".dropdown");
-      navbar.style.transform = "translateY(-500px)";
+      document.querySelector(".dropdown").style.transform = "translateY(-500px)";
     }
   </script>
 </body>
