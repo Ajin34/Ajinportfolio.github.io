@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Projects | Ajin George Thomas</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+        <span>Ajin George Thomas</span> | Portfolio
+      </div>
+      <div class="links">
+        <div class="link"><a href="index.html">Home</a></div>
+        <div class="link"><a href="about.html">About</a></div>
+        <div class="link"><a href="skill.html">Skills</a></div>
+        <div class="link"><a href="project.html">Projects</a></div>
+        <div class="link contact-btn"><a href="#contact">Contact</a></div>
+      </div>
+      <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div class="dropdown">
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skill.html">Skills</a>
+        <a href="project.html">Projects</a>
+        <a href="#contact">Contact</a>
+        <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Projects Section -->
+  <section class="projects" id="projects">
+    <div class="container">
+      <h1 class="section-title" data-aos="fade-down">My Projects</h1>
+
+      <div class="project-card" data-aos="fade-up" data-aos-delay="100">
+        <h2>SOC Project - Website Log Monitoring Using Splunk</h2>
+        <p>Deploying WordPress on Ubuntu and monitoring its logs using Splunk for real-time security analysis.</p>
+      </div>
+
+      <div class="project-card" data-aos="fade-up" data-aos-delay="200">
+        <h2>Metro Rail Management System</h2>
+        <p>Designed a metro rail management system that reduced ticket booking and recharge time by 50%, ensured real-time access to schedules, fare details, and route maps, resolved 90% of user complaints within 24 hours, and lowered operational costs by 30% through digital ticketing and transactions.</p>
+      </div>
+
+      <div class="project-card" data-aos="fade-up" data-aos-delay="300">
+        <h2>Small Scale Industry Development System</h2>
+        <p>Built a system to manage purchase, production, stock, and sales for small-scale industries, improving operational efficiency by 60%, processing 90% of business applications within 48 hours, and increasing market reach by 30% through integrated sales and marketing features.</p>
+      </div>
+
+      <div class="project-card" data-aos="fade-up" data-aos-delay="400">
+        <h2>Wazuh Windows 11 Monitoring</h2>
+        <p>Monitoring Windows 11 endpoints using Wazuh SIEM for log analysis, intrusion detection, and compliance auditing.</p>
+      </div>
+
+      <!-- Prev Next Buttons -->
+      <div class="navigation-buttons" data-aos="fade-up" data-aos-delay="500">
+        <a href="skill.html" class="btn-nav">← Prev</a>
+        <a href="contact.html" class="btn-nav">Next →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- AOS Init -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ offset: 0 });
+  </script>
+  <script>
+    function hamburg() {
+      document.querySelector(".dropdown").style.transform = "translateY(0)";
+    }
+    function cancel() {
+      document.querySelector(".dropdown").style.transform = "translateY(-500px)";
+    }
+  </script>
+</body>
+</html>
