@@ -34,15 +34,16 @@ nav {
 }
 
 .logo {
-    color: #1a1a1a;
+    color: white; /* Changed color to white */
     font-size: 2rem;
     font-weight: bolder;
 }
 
 .logo span {
-    color: #0077b6;
+    color: white; /* Changed color to white */
     text-shadow: 0 0 10px #0077b6;
 }
+
 
 .hamburg, .cancel {
     cursor: pointer;
