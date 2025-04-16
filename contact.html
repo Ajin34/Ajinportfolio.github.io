@@ -2,30 +2,109 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Ajin George Thomas</title>
+
+  <!-- Meta Info -->
   <meta name="description" content="Ajin George Thomas Portfolio, showcasing skills and projects in cybersecurity, web development, and more.">
   <meta property="og:title" content="Ajin George Thomas - Portfolio">
   <meta property="og:description" content="Explore my portfolio showcasing my projects, skills, and experiences in cybersecurity and web development.">
   <meta property="og:image" content="path/to/your-image.jpg">
-  <title>Contact | Ajin George Thomas</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="sailogo.png" />
 
-  <!-- External Libraries -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <script src="https://kit.fontawesome.com/4a3b08cf27.js" crossorigin="anonymous"></script>
+  <!-- External CSS & Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"/>
 
-  <!-- Internal CSS -->
+  <!-- Style -->
   <style>
+    body {
+      background: linear-gradient(to right, rgb(255,255,255), rgb(173, 232, 254));
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    nav {
+      background: #ffffff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .link a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .link a:hover {
+      color: #00bcd4;
+    }
+
+    .hamburg {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .dropdown {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      width: 100%;
+      background-color: #ffffff;
+      padding: 20px;
+      transform: translateY(-500px);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .dropdown .links {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .dropdown .links a {
+      padding: 10px 0;
+    }
+
+    .cancel {
+      font-size: 24px;
+      cursor: pointer;
+      position: absolute;
+      right: 30px;
+      top: 15px;
+    }
+
     .contact-container {
       max-width: 800px;
-      margin: 100px auto;
+      margin: 120px auto;
       padding: 30px;
       background-color: #ffffff;
       border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       text-align: center;
     }
 
@@ -57,6 +136,16 @@
       vertical-align: middle;
     }
 
+    @media (max-width: 768px) {
+      .links {
+        display: none;
+      }
+
+      .hamburg {
+        display: block;
+      }
+    }
+
     @media (max-width: 600px) {
       .contact-container {
         margin: 50px 20px;
@@ -79,7 +168,36 @@
 </head>
 <body>
 
-  <!-- Contact Content -->
+<!-- Navbar -->
+<nav>
+  <div class="nav-container">
+    <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+      <span>Ajin George Thomas</span> | Portfolio
+    </div>
+    <div class="links">
+      <div class="link" data-aos="fade-up" data-aos-delay="100"><a href="index.html">Home</a></div>
+      <div class="link" data-aos="fade-up" data-aos-delay="200"><a href="about.html">About</a></div>
+      <div class="link" data-aos="fade-up" data-aos-delay="300"><a href="skills.html">Skills</a></div>
+      <div class="link" data-aos="fade-up" data-aos-delay="400"><a href="project.html">Projects</a></div>
+      <div class="link contact-btn" data-aos="fade-up" data-aos-delay="500"><a href="contact.html">Contact</a></div>
+    </div>
+    <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+  </div>
+
+  <div class="dropdown">
+    <div class="links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="project.html">Projects</a>
+      <a href="contact.html">Contact</a>
+      <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+    </div>
+  </div>
+</nav>
+
+<!-- Contact Content -->
+<section>
   <div class="contact-container" data-aos="fade-up">
     <h2>Contact Me</h2>
 
@@ -95,11 +213,21 @@
       </a>
     </div>
   </div>
+</section>
 
-  <!-- AOS Animation -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({ offset: 0, duration: 1000 });
-  </script>
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({ offset: 0, duration: 1000 });
+
+  function hamburg() {
+    document.querySelector(".dropdown").style.transform = "translateY(0)";
+  }
+
+  function cancel() {
+    document.querySelector(".dropdown").style.transform = "translateY(-500px)";
+  }
+</script>
+
 </body>
 </html>
