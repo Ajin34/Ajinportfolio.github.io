@@ -27,18 +27,20 @@
       padding-top: 70px;
     }
 
+    /* Header same as index.html nav bar */
     .header {
       width: 100%;
       position: fixed;
       top: 0;
       left: 0;
-      background-color: rgba(0, 0, 0, 0.9);
-      padding: 15px 20px;
+      background-color: rgba(5, 5, 5, 0.95);
+      padding: 15px 25px;
       z-index: 1000;
       backdrop-filter: blur(5px);
       display: flex;
       justify-content: space-between;
       align-items: center;
+      border-bottom: 1px solid #00ffcc;
     }
 
     .logo {
@@ -61,10 +63,11 @@
       transition: background-color 0.3s, transform 0.3s;
     }
 
-    .navbar a:hover {
-      background-color: #575757;
+    .navbar a:hover, .navbar a.active {
+      background-color: #00ffcc;
+      color: #000;
       border-radius: 5px;
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
 
     .menu-icon {
@@ -81,7 +84,7 @@
         position: absolute;
         top: 60px;
         right: 0;
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: rgba(0, 0, 0, 0.95);
         width: 100%;
         text-align: center;
       }
@@ -106,6 +109,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* Contact Section */
     .contact-container {
       text-align: center;
       padding: 60px 20px;
@@ -183,7 +187,7 @@
 <body>
   <!-- Header -->
   <header class="header">
-    <a href="index.html" class="logo">Portfolio | Ajin</a>
+    <a href="index.html" class="logo">Ajin George Thomas</a>
     <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
     <nav class="navbar" id="navbar">
       <a href="index.html">Home</a>
