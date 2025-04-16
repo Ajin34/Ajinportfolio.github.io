@@ -4,9 +4,181 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Projects | Ajin George Thomas</title>
-  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f2f5;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* Navbar Styles */
+    nav {
+      background: #333;
+      color: #fff;
+      padding: 15px 30px;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    .links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .link a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .link a:hover {
+      color: #ffd700;
+    }
+
+    .hamburg {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .dropdown {
+      display: none;
+      flex-direction: column;
+      background: #444;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      transform: translateY(-500px);
+      transition: transform 0.4s ease;
+      z-index: 999;
+    }
+
+    .dropdown .links a {
+      padding: 10px 20px;
+      color: #fff;
+      border-top: 1px solid #555;
+    }
+
+    .dropdown .cancel {
+      padding: 10px 20px;
+      color: #fff;
+      cursor: pointer;
+      align-self: flex-end;
+    }
+
+    /* Section Styles */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
+    /* Project Slider */
+    .slider-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      height: 250px;
+    }
+
+    .slider-wrapper {
+      display: flex;
+      width: 400%;
+      animation: slideProjects 20s infinite;
+    }
+
+    .project-card {
+      flex: 0 0 100%;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      margin-right: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    @keyframes slideProjects {
+      0%   { transform: translateX(0%); }
+      25%  { transform: translateX(-100%); }
+      50%  { transform: translateX(-200%); }
+      75%  { transform: translateX(-300%); }
+      100% { transform: translateX(0%); }
+    }
+
+    .navigation-buttons {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .btn-nav {
+      background: #333;
+      color: #fff;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn-nav:hover {
+      background: #444;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .links {
+        display: none;
+      }
+
+      .hamburg {
+        display: block;
+      }
+
+      .dropdown {
+        display: flex;
+      }
+
+      .slider-container {
+        height: auto;
+      }
+
+      .project-card {
+        height: auto;
+      }
+
+      .slider-wrapper {
+        flex-direction: column;
+        animation: none;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -21,7 +193,7 @@
         <div class="link"><a href="about.html">About</a></div>
         <div class="link"><a href="skill.html">Skills</a></div>
         <div class="link"><a href="project.html">Projects</a></div>
-        <div class="link contact-btn"><a href="#contact">Contact</a></div>
+        <div class="link contact-btn"><a href="contact.html">Contact</a></div>
       </div>
       <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
     </div>
@@ -33,62 +205,54 @@
         <a href="about.html">About</a>
         <a href="skill.html">Skills</a>
         <a href="project.html">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="contact.html">Contact</a>
         <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
       </div>
     </div>
   </nav>
 
   <!-- Projects Section -->
-<section class="projects" id="projects">
-  <div class="container">
-    <h1 class="section-title" data-aos="fade-down">My Projects</h1>
+  <section class="projects" id="projects">
+    <div class="container">
+      <h1 class="section-title" data-aos="fade-down">My Projects</h1>
 
-    <!-- Carousel Wrapper -->
-    <div class="carousel-container" data-aos="fade-up" data-aos-delay="100">
-      <div class="carousel-track" id="carouselTrack">
-        <div class="project-card">
-          <h2>SOC Project - Website Log Monitoring Using Splunk</h2>
-          <p>Deploying WordPress on Ubuntu and monitoring its logs using Splunk for real-time security analysis.</p>
-        </div>
-        <div class="project-card">
-          <h2>Metro Rail Management System</h2>
-          <p>Designed a metro rail management system that reduced ticket booking and recharge time by 50%, ensured real-time access to schedules, fare details, and route maps, resolved 90% of user complaints within 24 hours, and lowered operational costs by 30% through digital ticketing and transactions.</p>
-        </div>
-        <div class="project-card">
-          <h2>Small Scale Industry Development System</h2>
-          <p>Built a system to manage purchase, production, stock, and sales for small-scale industries, improving operational efficiency by 60%, processing 90% of business applications within 48 hours, and increasing market reach by 30% through integrated sales and marketing features.</p>
-        </div>
-        <div class="project-card">
-          <h2>Wazuh Windows 11 Monitoring</h2>
-          <p>Monitoring Windows 11 endpoints using Wazuh SIEM for log analysis, intrusion detection, and compliance auditing.</p>
+      <div class="slider-container" data-aos="fade-up">
+        <div class="slider-wrapper">
+          <div class="project-card">
+            <h2>SOC Project - Website Log Monitoring Using Splunk</h2>
+            <p>Deploying WordPress on Ubuntu and monitoring its logs using Splunk for real-time security analysis.</p>
+          </div>
+          <div class="project-card">
+            <h2>Metro Rail Management System</h2>
+            <p>Designed a metro rail management system that reduced ticket booking and recharge time by 50%, ensured real-time access to schedules, fare details, and route maps, resolved 90% of user complaints within 24 hours, and lowered operational costs by 30% through digital ticketing and transactions.</p>
+          </div>
+          <div class="project-card">
+            <h2>Small Scale Industry Development System</h2>
+            <p>Built a system to manage purchase, production, stock, and sales for small-scale industries, improving operational efficiency by 60%, processing 90% of business applications within 48 hours, and increasing market reach by 30% through integrated sales and marketing features.</p>
+          </div>
+          <div class="project-card">
+            <h2>Wazuh Windows 11 Monitoring</h2>
+            <p>Monitoring Windows 11 endpoints using Wazuh SIEM for log analysis, intrusion detection, and compliance auditing.</p>
+          </div>
         </div>
       </div>
 
-      <!-- Carousel Controls -->
-      <div class="carousel-controls">
-        <button class="carousel-btn" onclick="prevSlide()">← Prev</button>
-        <button class="carousel-btn" onclick="nextSlide()">Next →</button>
+      <div class="navigation-buttons" data-aos="fade-up" data-aos-delay="500">
+        <a href="skill.html" class="btn-nav">← Prev</a>
+        <a href="contact.html" class="btn-nav">Next →</a>
       </div>
     </div>
+  </section>
 
-    <!-- Prev Next Buttons -->
-    <div class="navigation-buttons" data-aos="fade-up" data-aos-delay="500">
-      <a href="skill.html" class="btn-nav">← Prev</a>
-      <a href="contact.html" class="btn-nav">Next →</a>
-    </div>
-  </div>
-</section>
-
-  <!-- AOS Init -->
+  <!-- AOS & Scripts -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script>
     AOS.init({ offset: 0 });
-  </script>
-  <script>
+
     function hamburg() {
       document.querySelector(".dropdown").style.transform = "translateY(0)";
     }
+
     function cancel() {
       document.querySelector(".dropdown").style.transform = "translateY(-500px)";
     }
