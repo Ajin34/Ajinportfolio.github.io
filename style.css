@@ -13,9 +13,9 @@ html {
 
 body {
     width: 100%;
-    background: linear-gradient(to right, #ffffff, #e0e0e0);
+    background: linear-gradient(to right, #0a2c60, #062a49); /* Dark blue gradient */
     overflow-x: hidden;
-    color: #1a1a1a;
+    color: #ffffff; /* White text color for contrast */
 }
 
 nav {
@@ -33,14 +33,14 @@ nav {
 }
 
 .logo {
-    color: #1a1a1a;
+    color: #ffffff;
     font-size: 2rem;
     font-weight: bolder;
 }
 
 .logo span {
-    color: #0077b6;
-    text-shadow: 0 0 10px #0077b6;
+    color: #00aaff;
+    text-shadow: 0 0 10px #00aaff;
 }
 
 .hamburg, .cancel {
@@ -48,7 +48,7 @@ nav {
     position: absolute;
     right: 15px;
     top: 10px;
-    color: #1a1a1a;
+    color: #ffffff;
     font-size: 2rem;
     display: none;
 }
@@ -62,7 +62,7 @@ nav {
 .nav-container .links a {
     position: relative;
     font-size: 1.2rem;
-    color: #1a1a1a;
+    color: #ffffff;
     text-decoration: none;
     font-weight: 500;
     transition: 0.3s linear;
@@ -75,7 +75,7 @@ nav {
     left: 0;
     width: 0%;
     height: 3px;
-    background-color: #0077b6;
+    background-color: #00aaff;
     transition: 0.2s linear;
 }
 
@@ -87,24 +87,24 @@ nav {
     background-color: transparent;
     padding: 5px 20px;
     border-radius: 20px;
-    border: 2px solid #0077b6;
+    border: 2px solid #00aaff;
     transition: 0.2s linear;
 }
 
 .nav-container .contact-btn a {
-    color: #1a1a1a;
+    color: #ffffff;
     transition: 0.3s linear;
     text-decoration: none;
 }
 
 .nav-container .contact-btn:hover,
 .nav-container .contact-btn:hover a {
-    background-color: #0077b6;
+    background-color: #00aaff;
     color: white;
 }
 
 .nav-container .links a:hover {
-    color: #0077b6;
+    color: #00aaff;
 }
 
 .dropdown {
@@ -134,7 +134,7 @@ nav {
 }
 
 .dropdown .links a:hover {
-    background-color: #0077b6;
+    background-color: #00aaff;
 }
 
 section {
@@ -160,7 +160,7 @@ section {
 }
 
 .main-container .content {
-    color: #1a1a1a;
+    color: #ffffff;
     width: 45%;
     min-height: 100px;
 }
@@ -170,8 +170,8 @@ section {
 }
 
 .content h1 span {
-    color: #0077b6;
-    text-shadow: 0 0 10px #0077b6;
+    color: #00aaff;
+    text-shadow: 0 0 10px #00aaff;
 }
 
 .content .typewriter {
@@ -183,7 +183,7 @@ section {
     font-size: 1rem;
     line-height: 1.8;
     margin: 20px 0;
-    color: #333;
+    color: #e0e0e0;
 }
 
 .social-links i {
@@ -193,9 +193,9 @@ section {
     width: 3rem;
     height: 3rem;
     background-color: transparent;
-    border: 0.2rem solid #0077b6;
+    border: 0.2rem solid #00aaff;
     border-radius: 50%;
-    color: #0077b6;
+    color: #00aaff;
     margin: 5px 10px;
     font-size: 1.5rem;
     transition: 0.2s linear;
@@ -204,8 +204,8 @@ section {
 .social-links i:hover {
     transform: scale(1.3);
     color: white;
-    background-color: #0077b6;
-    filter: drop-shadow(0 0 10px #0077b6);
+    background-color: #00aaff;
+    filter: drop-shadow(0 0 10px #00aaff);
 }
 
 .content button {
@@ -213,7 +213,7 @@ section {
     max-width: 250px;
     height: 6vh;
     margin: 30px 0;
-    background-color: #0077b6;
+    background-color: #00aaff;
     color: white;
     border: none;
     font-size: 1rem;
@@ -225,10 +225,10 @@ section {
 
 .content button:hover {
     transform: scale(1.05);
-    color: #0077b6;
-    border: 2px solid #0077b6;
+    color: #00aaff;
+    border: 2px solid #00aaff;
     background-color: transparent;
-    box-shadow: 0 0 20px #0077b6;
+    box-shadow: 0 0 20px #00aaff;
 }
 
 @media (max-width: 884px) {
