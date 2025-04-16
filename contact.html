@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Ajin George Thomas</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+        <span>Ajin George Thomas</span> | Portfolio
+      </div>
+      <div class="links">
+        <div class="link" data-aos="fade-up" data-aos-delay="100"><a href="index.html">Home</a></div>
+        <div class="link" data-aos="fade-up" data-aos-delay="200"><a href="about.html">About</a></div>
+        <div class="link" data-aos="fade-up" data-aos-delay="300"><a href="skill.html">Skills</a></div>
+        <div class="link" data-aos="fade-up" data-aos-delay="400"><a href="project.html">Projects</a></div>
+        <div class="link contact-btn" data-aos="fade-up" data-aos-delay="500"><a href="contact.html">Contact</a></div>
+      </div>
+      <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+    </div>
+
+    <!-- Dropdown (mobile menu) -->
+    <div class="dropdown">
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="skill.html">Skills</a>
+        <a href="project.html">Projects</a>
+        <a href="contact.html">Contact</a>
+        <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="contact-container">
+      <h1 data-aos="fade-up" data-aos-delay="200">Contact Me</h1>
+      <p data-aos="fade-up" data-aos-delay="300">
+        I am currently seeking job opportunities in web development, cybersecurity, and related fields. If you're looking for a passionate and skilled professional, feel free to reach out. I am open to exploring new roles and challenges!
+      </p>
+      
+      <div class="social-links" data-aos="fade-up" data-aos-delay="400">
+        <a href="https://github.com/Ajin34" target="_blank" aria-label="Visit my GitHub profile">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/ajin-george-thomas-129143220/" target="_blank" aria-label="Visit my LinkedIn profile">
+          <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+      </div>
+
+      <div class="job-opportunities">
+        <p data-aos="fade-up" data-aos-delay="500">
+          <strong>Looking for Job Opportunities</strong>
+        </p>
+        <p data-aos="fade-up" data-aos-delay="600">
+          I am currently exploring job opportunities in web development, cybersecurity, and related fields. If you are hiring or know someone who is, feel free to get in touch.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Include AOS -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ offset: 0 });
+  </script>
+  <script>
+    function hamburg() {
+      document.querySelector(".dropdown").style.transform = "translateY(0)";
+    }
+    function cancel() {
+      document.querySelector(".dropdown").style.transform = "translateY(-500px)";
+    }
+  </script>
+</body>
+</html>
