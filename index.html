@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <title>Ajin George Thomas Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
@@ -34,6 +34,7 @@
             </div>
         </div>
     </nav>
+
     <section>
         <div class="main-container">
             <div class="image" data-aos="zoom-in-right" data-aos-duration="2500">
@@ -41,8 +42,16 @@
             </div>
             <div class="content">
                 <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">Hey I'm <span>Ajin George Thomas</span></h1>
-                <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="900">I'm a <span></span></div>
-                <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione, perferendis quas consectetur possimus maxime consequatur cupiditate eos dolorum molestias praesentium error exercitationem rem labore illo, in dolor, odio corporis excepturi?</p>
+                <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="900">
+                    I'm a <span id="typing"></span>
+                </div>
+                <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">
+                    This portfolio highlights my passion for cybersecurity, my expertise in monitoring and defending against security incidents, and my skills in ethical hacking.
+                    <br><br>
+                      I have practical experience in identifying threats, conducting security assessments, and responding to incidents that target networks, applications, and systems.
+                    <br><br>
+                      I’m constantly learning and improving my skills in SOC, penetration testing, and developing security solutions to mitigate risks and vulnerabilities.
+                </p>
                 <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1200">
                     <a href="#"><i class="fa-brands fa-github"></i></a>
                     <a href="#"><i class="fa-brands fa-facebook"></i></a>
@@ -55,19 +64,62 @@
             </div>
         </div>
     </section>
+
+    <!-- AOS Library -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      AOS.init({offset:0});
+      AOS.init({ offset: 0 });
     </script>
+
+    <!-- Dropdown toggle script -->
     <script>
-        function hamburg(){
-            const navbar = document.querySelector(".dropdown")
-            navbar.style.transform = "translateY(0px)"
+        function hamburg() {
+            const navbar = document.querySelector(".dropdown");
+            navbar.style.transform = "translateY(0px)";
         }
-        function cancel(){
-            const navbar = document.querySelector(".dropdown")
-            navbar.style.transform = "translateY(-500px)"
+        function cancel() {
+            const navbar = document.querySelector(".dropdown");
+            navbar.style.transform = "translateY(-500px)";
         }
+    </script>
+
+    <!-- Typewriter Effect Script -->
+    <script>
+        const roles = [
+            "Bug Hunter",
+            "Web Developer",
+            "Ethical Hacker",
+            "SOC Analyst",
+            "Incident Responder"
+        ];
+        let i = 0;
+        let j = 0;
+        let currentRole = "";
+        let isDeleting = false;
+
+        function typeWriter() {
+            const typingSpan = document.getElementById("typing");
+            if (!typingSpan) return;
+
+            if (i < roles.length) {
+                if (!isDeleting && j <= roles[i].length) {
+                    currentRole = roles[i].substring(0, j++);
+                    typingSpan.innerHTML = currentRole;
+                    setTimeout(typeWriter, 100);
+                } else if (isDeleting && j >= 0) {
+                    currentRole = roles[i].substring(0, j--);
+                    typingSpan.innerHTML = currentRole;
+                    setTimeout(typeWriter, 50);
+                } else {
+                    isDeleting = !isDeleting;
+                    if (!isDeleting) {
+                        i = (i + 1) % roles.length;
+                    }
+                    setTimeout(typeWriter, 1000);
+                }
+            }
+        }
+        typeWriter();
     </script>
 </body>
 </html>
