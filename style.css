@@ -246,6 +246,67 @@ section {
     box-sizing: border-box;
 }
 
+/* Skills Page */
+.skills-wrapper {
+    max-width: 1200px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.skills-heading {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #1edb09;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.skill-box {
+    background-color: #1a1a1a;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInBox 0.8s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.skill-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 25px rgba(30, 219, 9, 0.4);
+}
+
+@keyframes fadeInBox {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skill-icon {
+    font-size: 48px;
+    color: #1edb09;
+    margin-bottom: 15px;
+}
+
+.skill-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.skill-description {
+    color: #ccc;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
 /* Responsive Styles */
 @media (max-width: 884px) {
     nav .logo {
@@ -267,32 +328,30 @@ section {
     .hamburg, .cancel {
         display: block;
     }
+}
 
-    .main-container .content,
-    .main-container .image {
+@media screen and (max-width: 768px) {
+    .navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba(51, 51, 51, 0.95);
         width: 100%;
+        text-align: center;
     }
 
-    .content p {
-        font-size: 0.9rem;
-        line-height: 1.6;
-    }
-
-    .cancel {
-        color: white;
-    }
-
-    .social-links i {
-        width: 2.5rem;
-        height: 2.5rem;
-        font-size: 1.5rem;
-    }
-
-    .content button {
-        width: 80%;
-    }
-
-    .about-container {
+    .navbar a {
+        display: block;
         padding: 10px;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .navbar.active {
+        display: flex;
     }
 }
